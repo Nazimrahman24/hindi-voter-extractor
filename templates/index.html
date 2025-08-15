@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hindi Voter List Extractor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voter PDF to Excel Converter</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body>
+<body class="dark">
     <div class="container">
-
-        <!-- Header with AICVC logo / trademark -->
+        <!-- Header -->
         <div class="header">
-            <img src="{{ url_for('static', filename='aicvc_logo.png') }}" alt="AICVC Logo">
-            <h1>AICVC - Hindi Voter List Extractor™</h1>
+            <h1>Voter PDF to Excel Converter™</h1>
+            <button id="themeToggle">🌞</button>
         </div>
 
-        <!-- Usage Instructions -->
+        <!-- Instructions -->
         <div class="instructions">
             <p><strong>Usage Instructions:</strong></p>
             <ul>
@@ -25,28 +25,35 @@
             </ul>
         </div>
 
+        <!-- Upload Area -->
         <div id="uploadArea" class="upload-area">
             <p>Click or Drag & Drop PDF here</p>
             <input type="file" id="fileInput" accept=".pdf" hidden>
         </div>
 
+        <!-- File Info -->
         <div id="fileInfo">
             <span>File Name: <span id="fileName"></span></span>
             <span>Size: <span id="fileSize"></span></span>
         </div>
 
+        <!-- Status -->
         <div id="statusMessage"></div>
 
+        <!-- Convert Button -->
         <button id="convertBtn" disabled>Convert to Excel</button>
 
-        <div id="resultsSection">
+        <!-- Download Result (Hidden Initially) -->
+        <div id="resultsSection" style="display:none;">
             <a id="downloadBtn" href="#">Download Excel</a>
         </div>
 
+        <!-- Error -->
         <div id="errorSection">
             <span id="errorMessage"></span>
         </div>
 
+        <!-- Footer -->
         <div class="footer">
             &copy; 2025 AICVC™. All rights reserved.
         </div>
